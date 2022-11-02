@@ -7,13 +7,13 @@ const cardsContainer = document.querySelector('.cards-container');
 
 //dando estilos a los menus
 navEmail.addEventListener('click',function(){
-    document.querySelector('.product-detail').classList.add('inactive');
+    document.querySelector('#shopping-cart').classList.add('inactive');
     const menu =  document.querySelector('.desktop-menu');
         menu.classList.toggle('inactive');
 });
 
 hamIcon.addEventListener('click',function(){
-    document.querySelector('.product-detail').classList.add('inactive');
+    document.querySelector('#shopping-cart').classList.add('inactive');
     const mobilemenu = document.querySelector('.mobile-menu');
         mobilemenu.classList.toggle('inactive');
 });
@@ -21,7 +21,7 @@ hamIcon.addEventListener('click',function(){
 carritoIcon.addEventListener('click', function(){
     document.querySelector('.desktop-menu').classList.add('inactive');
     document.querySelector('.mobile-menu').classList.add('inactive');
-    const carritoAside = document.querySelector('.product-detail');
+    const carritoAside = document.querySelector('#shopping-cart');
         carritoAside.classList.toggle('inactive');
 });
 

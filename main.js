@@ -3,17 +3,20 @@ const hamIcon = document.querySelector('.menu');
 const carritoIcon = document.querySelector('.navbar-shopping-cart');
 const productList = [];
 const cardsContainer = document.querySelector('.cards-container');
+const iconCloseProduct = document.querySelector('.product-detail-close');
 
 
 //dando estilos a los menus
 navEmail.addEventListener('click',function(){
     document.querySelector('#shopping-cart').classList.add('inactive');
+    document.querySelector('#product-detail').classList.add('inactive');
     const menu =  document.querySelector('.desktop-menu');
         menu.classList.toggle('inactive');
 });
 
 hamIcon.addEventListener('click',function(){
     document.querySelector('#shopping-cart').classList.add('inactive');
+    document.querySelector('#product-detail').classList.add('inactive');
     const mobilemenu = document.querySelector('.mobile-menu');
         mobilemenu.classList.toggle('inactive');
 });
@@ -21,8 +24,15 @@ hamIcon.addEventListener('click',function(){
 carritoIcon.addEventListener('click', function(){
     document.querySelector('.desktop-menu').classList.add('inactive');
     document.querySelector('.mobile-menu').classList.add('inactive');
+    document.querySelector('#product-detail').classList.add('inactive');
     const carritoAside = document.querySelector('#shopping-cart');
         carritoAside.classList.toggle('inactive');
+});
+
+iconCloseProduct.addEventListener('click',function(){
+    document.querySelector('.desktop-menu').classList.add('inactive');
+    document.querySelector('#shopping-cart').classList.add('inactive');
+    document.querySelector('#product-detail').classList.add('inactive');
 });
 
 
@@ -67,6 +77,11 @@ productCard.classList.add('product-card');
 
 const img = document.createElement('img');
 img.setAttribute('src',product.image);
+img.addEventListener('click',function(){
+    document.querySelector('#shopping-cart').classList.add('inactive');
+    document.querySelector('.desktop-menu').classList.add('inactive');
+    document.querySelector('#product-detail').classList.remove('inactive');
+});
 
 const productInfo = document.createElement('div');
 productInfo.classList.add('product-info');
@@ -99,3 +114,4 @@ cardsContainer.appendChild(productCard);
 }
 
 renderProducts(productList);
+
